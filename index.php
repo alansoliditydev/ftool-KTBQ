@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <script src="//code.jquery.com/jquery.min.js"></script>
 <title>
-  Get Token Full Quyền
+  Một triệu đô
 </title>
 <link rel="stylesheet" type="text/css" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
 <link href="//cdn.shopify.com/s/files/1/0691/5403/t/123/assets/style.scss.css?13701263572696252361" rel="stylesheet" type="text/css"  media="all"  />
@@ -16,7 +16,7 @@
       <div class="col-md-12 text-center">
 <div class="panel panel-default">
 <div class="panel-heading">
-<h3 class="panel-title">Tool Lấy Token Full Quyền</h3>
+<h3 class="panel-title">Created By Team KTBQ</h3>
 </div>
 <div class="panel-body">
 <div class="form-group">
