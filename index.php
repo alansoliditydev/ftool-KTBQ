@@ -48,9 +48,14 @@
                         <button id="submit" class="btn btn-sm btn-primary">Lấy Token</button>
                     </div>
                     <div class='total-wrapper' style="padding-bottom: 5px;"> Số tài khoản đã xử lý : <strong class="total">0/0</strong> </div>
+
                     <div class="form-group text-center" id="load_result" style="display:none">
                         <label for="result">Các ACCESS TOKEN của bạn là :</label>
                         <textarea readonly style='height: auto; min-height: 200px;' id="result"  class="form-control" rows="2"></textarea>
+                    </div>
+                    <div class="form-group text-center" id="account-error" style="display:none">
+                        <label for="result">Account bị lỗi: </label>
+                        <textarea readonly style='height: auto; min-height: 200px;' id="account_die"  class="form-control" rows="2"></textarea>
                     </div>
                 </div>
             </div>
@@ -60,6 +65,7 @@
                 $(document).ready(function(e) {
                     $('button#submit').on('click',function(){
                         $('#load_result').css('display','block');
+                        $('#account-error').css('display','block');
                         $('button#submit').prop('disabled',true);
                         $('button#submit').text('Đang lấy token cho anh em...');
                         _account = $('textarea#account').val().trim();
@@ -104,9 +110,9 @@
                                         data=JSON.parse(graph);
                                         if(data.error_msg){
                                             $('button#submit').text('Get token lỗi');
-                                            var htmls = $('#result').text();
-                                            htmls = htmls  + data.error_msg + _x64 +_account + "\n";
-                                            $('#result').text(htmls);
+                                            var htmls = $('#account_die').text();
+                                            htmls = htmls  + data.error_msg + "  -  " +_account + "\n";
+                                            $('#account_die').text(htmls);
                                             notifications(data.error_msg);
                                         }
                                         if (data.access_token){

@@ -2,9 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8065d6f8-7b4c-4445-9c62-fed65aa6e94c" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/index.php" afterPath="$PROJECT_DIR$/index.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ios.php" afterPath="$PROJECT_DIR$/ios.php" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -19,11 +17,11 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="full.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="full.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/full.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="204">
-              <caret line="33" column="48" lean-forward="true" selection-start-line="33" selection-start-column="48" selection-end-line="33" selection-end-column="48" />
+            <state relative-caret-position="306">
+              <caret line="39" column="62" lean-forward="true" selection-start-line="39" selection-start-column="62" selection-end-line="39" selection-end-column="62" />
               <folding />
             </state>
           </provider>
@@ -41,16 +39,18 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="index.php" pinned="false" current-in-tab="false">
+      <file leaf-file-name="index.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/index.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="129">
-              <caret line="107" column="82" lean-forward="false" selection-start-line="107" selection-start-column="82" selection-end-line="107" selection-end-column="82" />
+            <state relative-caret-position="265">
+              <caret line="58" column="26" lean-forward="false" selection-start-line="58" selection-start-column="26" selection-end-line="58" selection-end-column="26" />
               <folding>
                 <element signature="e#1464#1486#0#HTML" expanded="true" />
                 <element signature="e#2321#2349#0#HTML" expanded="true" />
-                <element signature="e#2496#2516#0#HTML" expanded="true" />
-                <element signature="e#2644#2684#0#HTML" expanded="true" />
+                <element signature="e#2497#2517#0#HTML" expanded="true" />
+                <element signature="e#2645#2685#0#HTML" expanded="true" />
+                <element signature="e#2843#2863#0#HTML" expanded="true" />
+                <element signature="e#2979#3019#0#HTML" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -98,8 +98,8 @@
         <option value="$PROJECT_DIR$/android.php" />
         <option value="$PROJECT_DIR$/functions.php" />
         <option value="$PROJECT_DIR$/full.php" />
-        <option value="$PROJECT_DIR$/index.php" />
         <option value="$PROJECT_DIR$/ios.php" />
+        <option value="$PROJECT_DIR$/index.php" />
       </list>
     </option>
   </component>
@@ -219,12 +219,12 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1481989837381</updated>
-      <workItem from="1481989843186" duration="11194000" />
+      <workItem from="1481989843186" duration="12230000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="11194000" />
+    <option name="totallyTimeSpent" value="12230000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="10" y="20" width="1346" height="698" extended-state="0" />
@@ -286,19 +286,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/index.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="129">
-          <caret line="107" column="82" lean-forward="false" selection-start-line="107" selection-start-column="82" selection-end-line="107" selection-end-column="82" />
-          <folding>
-            <element signature="e#1464#1486#0#HTML" expanded="true" />
-            <element signature="e#2321#2349#0#HTML" expanded="true" />
-            <element signature="e#2496#2516#0#HTML" expanded="true" />
-            <element signature="e#2644#2684#0#HTML" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/ios.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="187">
@@ -309,9 +296,24 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/full.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="33" column="48" lean-forward="true" selection-start-line="33" selection-start-column="48" selection-end-line="33" selection-end-column="48" />
+        <state relative-caret-position="306">
+          <caret line="39" column="62" lean-forward="true" selection-start-line="39" selection-start-column="62" selection-end-line="39" selection-end-column="62" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/index.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="265">
+          <caret line="58" column="26" lean-forward="false" selection-start-line="58" selection-start-column="26" selection-end-line="58" selection-end-column="26" />
+          <folding>
+            <element signature="e#1464#1486#0#HTML" expanded="true" />
+            <element signature="e#2321#2349#0#HTML" expanded="true" />
+            <element signature="e#2497#2517#0#HTML" expanded="true" />
+            <element signature="e#2645#2685#0#HTML" expanded="true" />
+            <element signature="e#2843#2863#0#HTML" expanded="true" />
+            <element signature="e#2979#3019#0#HTML" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
