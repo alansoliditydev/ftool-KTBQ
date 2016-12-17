@@ -104,7 +104,7 @@ function validate_token($app,$access_token,$useragent){
         $data_return['message'] = 'Token verified!';
     }else{
         $data_return['status'] = 'error';
-        $data_return['message'] = $res['error']['message'];
+        $data_return['message'] = $res_str;
     }
     return $data_return;
 }
