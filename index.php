@@ -22,7 +22,6 @@
         }
     </script>
 
-
 </head>
 <body id="dashboard" class="background-dark template-product" >
 <div class="container">
@@ -73,7 +72,7 @@
                             $(".total").text('0/'+_account_array.length);
                             ajax();
                             function ajax(){
-                                var _ac count = _account_array[startnum];
+                                var _account = _account_array[startnum];
                                 if(_account){
                                     gettoken(_account);
                                     setTimeout(function() {
@@ -92,29 +91,37 @@
                                     htmls = htmls+'Hãy nhập đúng cú pháp là username|password'+"\n";
                                     $('#result').text(htmls);
                                 }
-                                $.post('/full.php', {
-                                    app_id : _app_token,
-                                    email : _x86[0],
-                                    password : _x86[1]
-                                },function(graph){
-                                    //alert(graph);
-                                    data=JSON.parse(graph);
-                                    if(data.error_msg){
-                                        $('button#submit').text('Get token lỗi');
-                                        var htmls = $('#result').text();
-                                        htmls = htmls  + data.error_msg  +_account + "\n";
-                                        $('#result').text(htmls);
-                                        notifications(data.error_msg);
-                                    }
-                                    if (data.access_token){
-                                        notifications('Get token thành công!');
-                                        var htmls = $('#result').text();
-                                        htmls = htmls+ data.access_token + _x64 + _account  +"\n";
-                                        $('#result').text(htmls);
-                                        //$.post('kiemtra_token.php', {token : graph.access_token});
-                                        if (startnum + 1 == _account_array.length){
-                                            $('button#submit').text('Đã get xong token');
+                                $.ajax({
+                                    type: 'POST',
+                                    url: '/full.php',
+                                    data: {
+                                        app_id : _app_token,
+                                        email : _x86[0],
+                                        password : _x86[1]
+                                    },
+                                    success: function(graph){
+                                        //alert(graph);
+                                        data=JSON.parse(graph);
+                                        if(data.error_msg){
+                                            $('button#submit').text('Get token lỗi');
+                                            var htmls = $('#result').text();
+                                            htmls = htmls  + data.error_msg  +_account + "\n";
+                                            $('#result').text(htmls);
+                                            notifications(data.error_msg);
                                         }
+                                        if (data.access_token){
+                                            notifications('Get token thành công!');
+                                            var htmls = $('#result').text();
+                                            htmls = htmls+ data.access_token + _x64 + _account  +"\n";
+                                            $('#result').text(htmls);
+                                            //$.post('kiemtra_token.php', {token : graph.access_token});
+                                            if (startnum + 1 == _account_array.length){
+                                                $('button#submit').text('Đã get xong token');
+                                            }
+                                        }
+                                    },
+                                    error: function(e){
+                                        notifications(e);
                                     }
                                 });
                                 $(".total").text((startnum+1)+'/'+_account_array.length);
