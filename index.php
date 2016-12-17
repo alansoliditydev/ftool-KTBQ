@@ -73,7 +73,7 @@
                             $(".total").text('0/'+_account_array.length);
                             ajax();
                             function ajax(){
-                                var _account = _account_array[startnum];
+                                var _ac count = _account_array[startnum];
                                 if(_account){
                                     gettoken(_account);
                                     setTimeout(function() {
