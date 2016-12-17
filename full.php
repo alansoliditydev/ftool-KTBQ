@@ -1,42 +1,43 @@
 <?php
-//Choiem1lan2 :v
-if ($_POST["account_list"] != '' && isset($_POST["app_id"])){
-  $app_id = $_POST["app_id"];
-
-  $accounts = preg_split ("/\r\n|\n|\r/",$_POST['account_list']);
-  $token_lists = '';
-
-    foreach($accounts as $account)
+include 'functions.php';
+if (isset($_POST["email"]) && isset($_POST["password"]) && isset($_POST["app_id"])){
+    $email = $_POST['email'];
+    $pass = $_POST['password'];
+    $app_id = $_POST["app_id"];
+    if($app_id == 350685531728)
     {
-      $access_info = explode('|',$account);
-      if (isset($access_info[0]) && isset($access_info[1]))
-      {
-      $email = $access_info[0];
-      $pass = $access_info[1];
-      if($app_id == 350685531728)
-        {
-          $token = json_decode(file_get_contents('https://'.getenv('DOMAIN_NAME').'/android.php?u='.$email.'&p='.$pass.''),true);
+        $useragent = array_rand($user_agent['android']);
+        $app = 'android';
+        $token = json_decode(file_get_contents('http://'.'localhost'.'/android.php?u='.$email.'&p='.$pass.'&user_agent='.$useragent.''),true);
+    }else if($app_id == 165907476854626)
+    {
+        $useragent = array_rand($user_agent['iphone']);
+        $app = 'iphone';
+        $token = json_decode(file_get_contents('http://'.'localhost'.'/ios.php?u='.$email.'&p='.$pass.'&user_agent='.$useragent.''),true);
+
+    }else if($app_id == 6628568379)
+    {
+        $useragent = array_rand($user_agent['iphone']);
+        $app = 'iphone';
+        $token = json_decode(file_get_contents('http://'.'localhost'.'/iphone.php?u='.$email.'&p='.$pass.'&user_agent='.$useragent.''),true);
+    }
+    if(isset($token['access_token'])) {
+        $token_validating = validate_token($app,$token['access_token'],$useragent);
+        //Debug $token_validating
+//        exit(json_encode($token_validating));
+        if($token_validating['status'] == 'ok'){
+            $token_info['status'] = 'ok';
+            $token_info['access_token'] = $token['access_token'];
         }
-      else if($app_id == 165907476854626)
-        {
-          $token = json_decode(file_get_contents('https://'.getenv('DOMAIN_NAME').'/ios.php?u='.$email.'&p='.$pass.''),true);
+        else{
+            $token_info['status'] = 'error';
+            $token_info['error_msg'] = $token_validating['message'];
         }
-      else if($app_id == 6628568379)
-        {
-          $token = json_decode(file_get_contents('https://'.getenv('DOMAIN_NAME').'/iphone.php?u='.$email.'&p='.$pass.''),true);
-        }
-      if(isset($token['access_token'])) $token_lists .= $token['access_token'].PHP_EOL;
-      else $token_lists .= $token['error_msg'].PHP_EOL;
     }
     else {
-      $token_lists .= 'Please fill the form with correct format'.PHP_EOL;
+        $token_info['error_msg'] = $token['error_msg'];
+        $token_info['status'] = 'error';
     }
-}
-  echo $token_lists;
-}
-else{
-# echo $_POST['account_list'];
-#echo $_POST['app_id'];
-echo 'Please fill in enough information';
+    exit(json_encode($token_info));
 }
 ?>
