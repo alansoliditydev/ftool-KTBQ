@@ -15,15 +15,15 @@ if ($_POST["account_list"] != '' && isset($_POST["app_id"])){
       $pass = $access_info[1];
       if($app_id == 350685531728)
         {
-          $token = json_decode(file_get_contents('http://localhost/android.php?u='.$email.'&p='.$pass.''),true);
+          $token = json_decode(file_get_contents('http://'.getenv('DOMAIN_NAME').'/android.php?u='.$email.'&p='.$pass.''),true);
         }
       else if($app_id == 165907476854626)
         {
-          $token = json_decode(file_get_contents('http://localhost/ios.php?u='.$email.'&p='.$pass.''),true);
+          $token = json_decode(file_get_contents('http://'.getenv('DOMAIN_NAME').'/ios.php?u='.$email.'&p='.$pass.''),true);
         }
       else if($app_id == 6628568379)
         {
-          $token = json_decode(file_get_contents('http://localhost/iphone.php?u='.$email.'&p='.$pass.''),true);
+          $token = json_decode(file_get_contents('http://'.getenv('DOMAIN_NAME').'/iphone.php?u='.$email.'&p='.$pass.''),true);
         }
       if(isset($token['access_token'])) $token_lists .= $token['access_token'].PHP_EOL;
       else $token_lists .= $token['error_msg'].PHP_EOL;
