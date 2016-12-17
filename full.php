@@ -31,6 +31,7 @@ if (isset($_POST["email"]) && isset($_POST["password"]) && isset($_POST["app_id"
         $token_validating = validate_token($app,$token['access_token'],$useragent);
         //Debug $token_validating
 //        exit(json_encode($token_validating));
+
         if($token_validating['status'] == 'ok'){
             $token_info['status'] = 'ok';
             $token_info['access_token'] = $token['access_token'];
