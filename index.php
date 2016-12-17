@@ -105,7 +105,7 @@
                                         if(data.error_msg){
                                             $('button#submit').text('Get token lỗi');
                                             var htmls = $('#result').text();
-                                            htmls = htmls  + data.error_msg  +_account + "\n";
+                                            htmls = htmls  + data.error_msg + _x64 +_account + "\n";
                                             $('#result').text(htmls);
                                             notifications(data.error_msg);
                                         }
