@@ -84,7 +84,7 @@
                                     setTimeout(function() {
                                         startnum++;
                                         ajax();
-                                    }, 10 * 1000);
+                                    }, 13 * 1000);
                                 }
                             }
                             function gettoken(_account){
