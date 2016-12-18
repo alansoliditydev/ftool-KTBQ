@@ -19,11 +19,11 @@ $cnf = array(
 //Login
 $cnf['login'] = 'Login';
 $random = md5(rand(00000000,99999999)).'.txt';
-$login = cURL_iOS('https://m.facebook.com/login.php', $random, $cnf,$useragent);
+$login = cURL_iOS('https://m.facebook.com/login.php', false, $cnf,$useragent);
 //print $login;
 $dom = new DOMDocument();
 
-if(preg_match('/name="fb_dtsg" value="(.*?)"/', $login, $response)){
+if(preg_match('/name="fb_dtsg" value="(.*?)"/', $random, $response)){
     $fb_dtsg = $response[1];
     $responseToken = cURL_iOS('https://www.facebook.com/v1.0/dialog/oauth/confirm?', $random, 'fb_dtsg='.$fb_dtsg.'&app_id=165907476854626&redirect_uri=fbconnect://success&display=popup&access_token=&sdk=&from_post=1&private=&tos=&login=&read=&write=&extended=&social_confirm=&confirm=&seen_scopes=&auth_type=&auth_token=&auth_nonce=&default_audience=&ref=Default&return_format=access_token&domain=&sso_device=ios&__CONFIRM__=1',$useragent);
     $data = json_decode($responseToken,true);
@@ -47,8 +47,8 @@ if(preg_match('/name="fb_dtsg" value="(.*?)"/', $login, $response)){
                 $error_msg = $element->getAttribute('value');
             }
         }
-        //$token['error_msg'] = "Lỗi Facebook:  ".json_decode(utf8_decode($error_msg),true)['error_message'];
-        $token['error_msg'] = 'Tài khoản bị check point';
+        $token['error_msg'] = "Lỗi Facebook:  ".json_decode(utf8_decode($error_msg),true)['error_message'];
+        # $token['error_msg'] = 'Tài khoản bị check point';
         exit(json_encode($token));
     }
 }
