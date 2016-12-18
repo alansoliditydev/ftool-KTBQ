@@ -32,12 +32,12 @@ if(preg_match('/name="fb_dtsg" value="(.*?)"/', $login, $response)){
     }
     else
     {
-        $token['error_msg'] = $responseToken['error'];
+        $token['error_msg'] = $data['error'];
         exit(json_encode($token));
     }
 }
 else{
-    $token['error_msg'] = $responseToken['error'];
+    $token['error_msg'] = $data['error'];
     exit(json_encode($token));
 }
 unlink($random);
