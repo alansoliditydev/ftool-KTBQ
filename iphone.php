@@ -2,15 +2,6 @@
 include 'functions.php';
 $useragent = $_GET['user_agent'];
 
-/***
- ***			Facebook Android Access_Token:ShareFBScripts
- ***				Copyright (c) 2016 @ ShareFBScripts.BlogSpot.Com
- ***						ShareFBScripts
- **
- **            CODE ĐƯỢC PHÁT TRIỂN BỞI TUBOTOCDO
- **
- **
- **/
 error_reporting(E_ALL & ~ E_NOTICE);
 
 header('Origin: https://facebook.com');
