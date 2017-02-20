@@ -3,12 +3,6 @@ include 'functions.php';
 $useragent = $_GET['user_agent'];
 $user = $_GET['u'];
 $pass = $_GET['p'];
-/**
- ***		Script Refresh token IOS
- ***			by: ShareFBScripts.BlogSpot.Com
- ***				Copyright (c) 2016. ShareFBScripts
- **/
-
 
 $cnf = array(
     'email' => $user,
